@@ -1,0 +1,104 @@
+@keyframes fill-out {
+    0%{
+        transform: scale(0.2,0.2);
+    }
+    50%{
+        transform: scale(1.05,1.05);
+    }
+    80%{
+        transform: scale(0.95,0.95);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+@-webkit-keyframes fill-out {
+    0%{
+        transform: scale(0.2,0.2);
+    }
+    50%{
+        transform: scale(1.05,1.05);
+    }
+    80%{
+        transform: scale(0.95,0.95);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+.clock-unit{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: animation 1s;
+    -moz-transition: animation 1s;
+    -ms-transition: animation 1s;
+    -o-transition: animation 1s;
+    transition: animation 1s;
+
+    animation: fill-out 1s;
+    -webkit-animation: fill-out 1s;
+}
+
+.clock-unit:before{
+    content: "";
+    background: none repeat scroll #ddd 0 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.clock-unit:after{
+    content: "";
+    background: none repeat scroll #fff 0 0;
+    width: 96%;
+    height: 96%;
+    border-radius: 96%;
+    position: absolute;
+    z-index: 1;
+    left: 2%;
+    top: 2%;
+}
+
+.clock-unit > .clock-unit-percent{
+    position: absolute;
+    font-size: 50px;
+    color: #000000;
+    text-align: center;
+    z-index: 2;
+    top: 33%;
+    width: 100%;
+}
+
+.clock-unit > .clock-unit-bar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0px,225px,225px,114px);
+}
+
+.clock-unit > .clock-unit-bar > .clock-unit-pipe{
+    position: absolute;
+    border: solid 5px cadetblue;
+    border-radius: 100%;
+    /*width: 215px;*/
+    width: 95.3%;
+    /*height: 215px;*/
+    height: 95.3%;
+    clip: rect(0px,114px,225px,0px);
+
+    -webkit-transition: border-color 1s;
+    -moz-transition: border-color 1s;
+    -ms-transition: border-color 1s;
+    -o-transition: border-color 1s;
+    transition: border-color 1s;
+}
+
