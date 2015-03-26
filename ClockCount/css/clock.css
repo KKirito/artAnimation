@@ -94,6 +94,9 @@
     /*height: 215px;*/
     height: 95.3%;
     clip: rect(0px,114px,225px,0px);
+    left: 0;
+    top: 0;
+    transform-origin: center;
 
     -webkit-transition: border-color 1s;
     -moz-transition: border-color 1s;

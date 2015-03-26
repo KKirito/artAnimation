@@ -57,6 +57,8 @@ var clock = {
 
   stepCurve : null,
 
+  border : 5,
+
   step_curve_fixed : function(stepPercent){
     return 30;
   },
@@ -189,6 +191,7 @@ var clock = {
     var pipe_bar = this.unit.querySelector(".clock-unit-bar");
     var pipe_r = this.unit.querySelector(".clock-unit-pipe-right");
     var pipe_l = this.unit.querySelector(".clock-unit-pipe-left");
+
     pipe_bar.style.clip = "rect(0px," + this.width + "px," + this.height + "px," + (this.width/2+1) + "px)";
     pipe_r.style.clip = "rect(0px," + (parseInt(this.width/2)+1) + "px," + this.height + "px,0px)";
     pipe_l.style.clip = "rect(0px," + (parseInt(this.width/2)+1) + "px," + this.height + "px,0px)";
@@ -202,17 +205,19 @@ var clock = {
     if(this.clock_change || !this.unit)
       return;
 
-    var border_width = (Border) || 5;
+    var border_width = (Border) || this.border;
+
+    this.border = border_width;
 
     var pipe_r = this.unit.querySelector(".clock-unit-pipe-right");
     var pipe_l = this.unit.querySelector(".clock-unit-pipe-left");
     pipe_r.style.borderWidth = border_width + "px";
     pipe_l.style.borderWidth = border_width + "px";
 
-    pipe_l.style.width = (this.width - 2 * border_width) + "px";
-    pipe_r.style.width = (this.width - 2 * border_width) + "px";
-    pipe_l.style.height = (this.height - 2 * border_width) + "px";
-    pipe_r.style.height = (this.height - 2 * border_width) + "px";
+    pipe_l.style.width = (this.width) + "px";
+    pipe_r.style.width = (this.width) + "px";
+    pipe_l.style.height = (this.height) + "px";
+    pipe_r.style.height = (this.height) + "px";
   },
 
   changeFontSize : function(FontSzie){
