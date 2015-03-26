@@ -38,7 +38,7 @@ function closure(sour,func){
 //   params include : width  height  step_curve border_width font_size color and percent
 //changeXXX ---->
 //   change the selected property
-//   XXX include : width  height  step_curve border_width font_size color and percent step
+//   XXX include : width  height  step_curve border_width font_size color and percent step tar
 //getPercent ---->
 //   get the percent on the clock
 ///////////////////////////////////////////functions off//////////////////////////
