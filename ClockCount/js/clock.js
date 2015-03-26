@@ -153,6 +153,12 @@ var clock = {
 
   },
 
+  changeTarget : function(tar){
+
+    this.unit = tar;
+
+  },
+
   changeStep : function(step){
 
     var s = step || this.step;
