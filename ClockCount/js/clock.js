@@ -81,7 +81,9 @@ var clock = {
       bar.style.clip = "rect(0px," + this.width + "px," + this.height + "px," + (this.width/2+1) + "px)";
       p = (parseFloat(percent)/50) * 180;
       pipe_right.style.transform = "rotate(" + p + "deg)";
+      pipe_right.style.webkitTransform = "rotate(" + p + "deg)";
       pipe_left.style.transform = "rotate(" + p + "deg)";
+      pipe_left.style.webkitTransform = "rotate(" + p + "deg)";
     }
     else{
       bar.style.clip = "rect(0px," + this.width + "px," + this.height + "px, 0px)";
@@ -214,10 +216,10 @@ var clock = {
     pipe_r.style.borderWidth = border_width + "px";
     pipe_l.style.borderWidth = border_width + "px";
 
-    pipe_l.style.width = (this.width) + "px";
-    pipe_r.style.width = (this.width) + "px";
-    pipe_l.style.height = (this.height) + "px";
-    pipe_r.style.height = (this.height) + "px";
+    pipe_l.style.width = (this.width - 2 * this.border) + "px";
+    pipe_r.style.width = (this.width - 2 * this.border) + "px";
+    pipe_l.style.height = (this.height - 2 * this.border) + "px";
+    pipe_r.style.height = (this.height - 2 * this.border) + "px";
   },
 
   changeFontSize : function(FontSzie){
