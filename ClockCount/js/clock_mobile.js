@@ -217,10 +217,10 @@ var clock = {
     pipe_r.style.borderWidth = border_width + "px";
     pipe_l.style.borderWidth = border_width + "px";
 
-    pipe_l.style.width = (this.width - 2 * this.border) + "px";
-    pipe_r.style.width = (this.width - 2 * this.border) + "px";
-    pipe_l.style.height = (this.height - 2 * this.border) + "px";
-    pipe_r.style.height = (this.height - 2 * this.border) + "px";
+    pipe_l.style.width = (this.width) + "px";
+    pipe_r.style.width = (this.width) + "px";
+    pipe_l.style.height = (this.height) + "px";
+    pipe_r.style.height = (this.height) + "px";
   },
 
   changeFontSize : function(FontSzie){
