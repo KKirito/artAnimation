@@ -28,6 +28,19 @@ function closure(sour,func){
   }
   return function(){func(source)};
 }
+
+/*select ::after and ::before*/
+/*document.stylesheets*/
+function ruleSelector(selector) {
+
+  var collections = Array.prototype.concat.apply([], Array.prototype.map.call(document.styleSheets, function(x) {
+      return Array.prototype.slice.call(x.cssRules);
+    }));
+
+  return collections.filter(function(x){
+    return x.selectorText == selector;
+  });
+}
 //////////////////////////////////////////over///////////////////////////////////
 
 /////////////////////////////////////////animation clock process bar//////////////
@@ -221,6 +234,15 @@ var clock = {
     pipe_r.style.width = (this.width - 2 * this.border) + "px";
     pipe_l.style.height = (this.height - 2 * this.border) + "px";
     pipe_r.style.height = (this.height - 2 * this.border) + "px";
+
+    var afterSize = ruleSelector(".clock-unit::after").slice(-1);
+    var thisClass = this;
+    afterSize.forEach(function(unit){
+      unit.style.width = (thisClass.width - thisClass.border * 2) + "px";
+      unit.style.height = (thisClass.height - thisClass.border * 2) + "px";
+      unit.style.left = thisClass.border + "px";
+      unit.style.top = thisClass.border + "px";
+    });
   },
 
   changeFontSize : function(FontSzie){
